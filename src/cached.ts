@@ -37,7 +37,7 @@ export class Cached<T = any> {
 
     public async update(): Promise<T> {
 
-        clearTimeout(this._clearer);
+        this.clear();
         const newValue: T = await this._fetch();
         this._cached = newValue;
 
@@ -47,5 +47,11 @@ export class Cached<T = any> {
         }, this._timeout);
 
         return newValue;
+    }
+
+    public clear(): this {
+
+        clearTimeout(this._clearer);
+        return this;
     }
 }
