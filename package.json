@@ -1,0 +1,46 @@
+{
+  "name": "@sudoo/continuous",
+  "version": "0.0.1",
+  "description": ":watch: Space plus Time = Continuous",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SudoDotDog/Continuous.git"
+  },
+  "keywords": [
+    "Time",
+    "Space"
+  ],
+  "author": "WMXPY",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SudoDotDog/Continuous/issues"
+  },
+  "homepage": "https://github.com/SudoDotDog/Continuous#readme",
+  "dependencies": {
+    "@sudoo/bark": "^2.6.4"
+  },
+  "devDependencies": {
+    "@sudoo/io": "^1.6.0",
+    "@sudoo/mock": "^1.2.0",
+    "@sudoo/triforce": "^1.6.0"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "src/**/*.ts"
+    ],
+    "instrument": true,
+    "reporter": [
+      "json",
+      "text-summary"
+    ],
+    "report-dir": "coverage",
+    "require": [
+      "./test/tshook.js"
+    ],
+    "sourceMap": true
+  }
+}
